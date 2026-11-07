@@ -2,6 +2,7 @@ node_modules
 dist
 dist-ssr
 .vercel
+.vercel-auth
 .env
 .env.*
 *.local
