@@ -4,7 +4,14 @@ import {
   PhoneCall, Instagram, Facebook, Linkedin, MessageCircle
 } from 'lucide-react';
 import { FlyzoMarkSVG, CaptainZizo } from './FlyzoBrandArt';
-import { buildWhatsAppUrl, CALLING_NUMBER, CALLING_NUMBER_DISPLAY, WHATSAPP_NUMBER_DISPLAY } from '../data/siteData';
+import {
+  buildWhatsAppUrl,
+  CALLING_NUMBER,
+  CALLING_NUMBER_DISPLAY,
+  CALLING_NUMBER_ALT,
+  CALLING_NUMBER_ALT_DISPLAY,
+  WHATSAPP_NUMBER_DISPLAY,
+} from '../data/siteData';
 
 const DOCK_TABS = [
   { id: 'tickets', label: 'Tickets', icon: Plane },
@@ -63,7 +70,10 @@ export default function Footer({ activeSection }) {
               </p>
               <div className="pt-1 space-y-1 font-mono text-xs font-extrabold text-[var(--ink)]">
                 <a href={`tel:${CALLING_NUMBER}`} className="flex items-center gap-1.5 hover:text-[#b5391a]">
-                  <PhoneCall className="w-3.5 h-3.5 text-[#b5391a]" /> Call: {CALLING_NUMBER_DISPLAY}
+                  <PhoneCall className="w-3.5 h-3.5 text-[#b5391a]" /> Call 1: {CALLING_NUMBER_DISPLAY}
+                </a>
+                <a href={`tel:${CALLING_NUMBER_ALT}`} className="flex items-center gap-1.5 hover:text-[#b5391a]">
+                  <PhoneCall className="w-3.5 h-3.5 text-[#b5391a]" /> Call 2: {CALLING_NUMBER_ALT_DISPLAY}
                 </a>
                 <a
                   href={buildWhatsAppUrl("Hello Flyzo Travels! I want to enquire via WhatsApp.")}

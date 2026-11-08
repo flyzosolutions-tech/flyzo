@@ -3,7 +3,14 @@ import {
   PhoneCall, Mail, MapPin, MessageCircle, Send, CheckCircle2
 } from 'lucide-react';
 import { CaptainZizo } from './FlyzoBrandArt';
-import { buildWhatsAppUrl, CALLING_NUMBER, CALLING_NUMBER_DISPLAY, WHATSAPP_NUMBER_DISPLAY } from '../data/siteData';
+import {
+  buildWhatsAppUrl,
+  CALLING_NUMBER,
+  CALLING_NUMBER_DISPLAY,
+  CALLING_NUMBER_ALT,
+  CALLING_NUMBER_ALT_DISPLAY,
+  WHATSAPP_NUMBER_DISPLAY,
+} from '../data/siteData';
 
 const SERVICE_OPTIONS = [
   '11. Flight / Train / Luxury Bus Ticket Booking',
@@ -63,8 +70,9 @@ export default function ContactEnquirySection({ prefilledService }) {
                 <dt className="text-xs font-extrabold uppercase text-[var(--muted)] flex items-center gap-1.5">
                   <PhoneCall className="w-3.5 h-3.5 text-[#b5391a]" /> 24/7 Calling Desk
                 </dt>
-                <dd className="mt-1 font-mono font-extrabold text-sm text-[var(--ink)]">
+                <dd className="mt-1 font-mono font-extrabold text-sm text-[var(--ink)] space-y-0.5">
                   <a href={`tel:${CALLING_NUMBER}`} className="underline text-[#b5391a] block">{CALLING_NUMBER_DISPLAY} →</a>
+                  <a href={`tel:${CALLING_NUMBER_ALT}`} className="underline text-[#b5391a] block">{CALLING_NUMBER_ALT_DISPLAY} →</a>
                   <p className="font-sans text-[11px] text-[var(--muted)] font-medium">Direct Voice Helpline (India)</p>
                 </dd>
               </div>
