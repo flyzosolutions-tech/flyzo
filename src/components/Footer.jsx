@@ -4,7 +4,7 @@ import {
   PhoneCall, Instagram, Facebook, Linkedin, MessageCircle
 } from 'lucide-react';
 import { FlyzoMarkSVG, CaptainZizo } from './FlyzoBrandArt';
-import { buildWhatsAppUrl } from '../data/siteData';
+import { buildWhatsAppUrl, CALLING_NUMBER, CALLING_NUMBER_DISPLAY, WHATSAPP_NUMBER_DISPLAY } from '../data/siteData';
 
 const DOCK_TABS = [
   { id: 'tickets', label: 'Tickets', icon: Plane },
@@ -62,8 +62,8 @@ export default function Footer({ activeSection }) {
                 Complete travel companion for Flight, Train &amp; Bus Tickets, Tourist Holidays, Sacred Umrah, Global Visas, Certificate Attestation &amp; Overseas Careers.
               </p>
               <div className="pt-1 space-y-1 font-mono text-xs font-extrabold text-[var(--ink)]">
-                <a href="tel:+96560387543" className="flex items-center gap-1.5 hover:text-[#b5391a]">
-                  <PhoneCall className="w-3.5 h-3.5 text-[#b5391a]" /> +965 6038 7543
+                <a href={`tel:${CALLING_NUMBER}`} className="flex items-center gap-1.5 hover:text-[#b5391a]">
+                  <PhoneCall className="w-3.5 h-3.5 text-[#b5391a]" /> Call: {CALLING_NUMBER_DISPLAY}
                 </a>
                 <a
                   href={buildWhatsAppUrl("Hello Flyzo Travels! I want to enquire via WhatsApp.")}
@@ -71,7 +71,7 @@ export default function Footer({ activeSection }) {
                   rel="noopener noreferrer"
                   className="flex items-center gap-1.5 text-[#1f6b35] hover:underline"
                 >
-                  <MessageCircle className="w-3.5 h-3.5" /> WhatsApp: +965 6038 7543
+                  <MessageCircle className="w-3.5 h-3.5" /> WhatsApp: {WHATSAPP_NUMBER_DISPLAY}
                 </a>
               </div>
             </div>

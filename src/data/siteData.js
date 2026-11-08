@@ -1,4 +1,7 @@
-export const WHATSAPP_NUMBER = "96560387543"; // Official Flyzo Travels WhatsApp & Hotline (+965 6038 7543)
+export const CALLING_NUMBER = "+919048606444"; // Primary Calling Helpline (India Desk)
+export const CALLING_NUMBER_DISPLAY = "+91 90486 06444";
+export const WHATSAPP_NUMBER = "96560387543"; // Official Flyzo Travels WhatsApp (+965 6038 7543)
+export const WHATSAPP_NUMBER_DISPLAY = "+965 6038 7543";
 
 export const buildWhatsAppUrl = (message) => {
   const encoded = encodeURIComponent(message);

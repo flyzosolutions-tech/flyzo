@@ -3,7 +3,7 @@ import {
   PhoneCall, Mail, MapPin, MessageCircle, Send, CheckCircle2
 } from 'lucide-react';
 import { CaptainZizo } from './FlyzoBrandArt';
-import { buildWhatsAppUrl } from '../data/siteData';
+import { buildWhatsAppUrl, CALLING_NUMBER, CALLING_NUMBER_DISPLAY, WHATSAPP_NUMBER_DISPLAY } from '../data/siteData';
 
 const SERVICE_OPTIONS = [
   '11. Flight / Train / Luxury Bus Ticket Booking',
@@ -64,8 +64,8 @@ export default function ContactEnquirySection({ prefilledService }) {
                   <PhoneCall className="w-3.5 h-3.5 text-[#b5391a]" /> 24/7 Helpline
                 </dt>
                 <dd className="mt-1 font-mono font-extrabold text-sm text-[var(--ink)]">
-                  <a href="tel:+96560387543" className="underline text-[#b5391a] block">+965 6038 7543 (Kuwait / GCC)</a>
-                  <a href="tel:+919876543210" className="text-xs text-[var(--muted)] block mt-0.5">+91 98765 43210 (India Desk)</a>
+                  <a href={`tel:${CALLING_NUMBER}`} className="underline text-[#b5391a] block">{CALLING_NUMBER_DISPLAY} (India Desk)</a>
+                  <a href="tel:+96560387543" className="text-xs text-[var(--muted)] block mt-0.5">+965 6038 7543 (Kuwait / GCC)</a>
                 </dd>
               </div>
 
@@ -80,7 +80,7 @@ export default function ContactEnquirySection({ prefilledService }) {
                     rel="noopener noreferrer"
                     className="text-[#1f6b35] underline block"
                   >
-                    +965 6038 7543 →
+                    {WHATSAPP_NUMBER_DISPLAY} →
                   </a>
                   <p className="text-[11px] text-[var(--muted)] font-medium">Share Passports / Tickets / CVs</p>
                 </dd>
@@ -186,7 +186,7 @@ export default function ContactEnquirySection({ prefilledService }) {
                         required
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
-                        placeholder="+965 6038 7543 / +91 98765 43210"
+                        placeholder="+91 90486 06444 / +965 6038 7543"
                         className="w-full px-4 py-3 rounded-xl border-2 border-[var(--edge)] bg-[var(--bg)] text-[var(--ink)] font-bold text-sm focus:outline-none focus:border-[#b5391a]"
                       />
                     </label>
