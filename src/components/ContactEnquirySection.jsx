@@ -61,11 +61,11 @@ export default function ContactEnquirySection({ prefilledService }) {
             <dl className="grid sm:grid-cols-2 gap-3.5">
               <div className="p-4 rounded-2xl border border-[var(--line)] bg-[var(--surface)]">
                 <dt className="text-xs font-extrabold uppercase text-[var(--muted)] flex items-center gap-1.5">
-                  <PhoneCall className="w-3.5 h-3.5 text-[#b5391a]" /> 24/7 Helpline
+                  <PhoneCall className="w-3.5 h-3.5 text-[#b5391a]" /> 24/7 Calling Desk
                 </dt>
                 <dd className="mt-1 font-mono font-extrabold text-sm text-[var(--ink)]">
-                  <a href={`tel:${CALLING_NUMBER}`} className="underline text-[#b5391a] block">{CALLING_NUMBER_DISPLAY} (India Desk)</a>
-                  <a href="tel:+96560387543" className="text-xs text-[var(--muted)] block mt-0.5">+965 6038 7543 (Kuwait / GCC)</a>
+                  <a href={`tel:${CALLING_NUMBER}`} className="underline text-[#b5391a] block">{CALLING_NUMBER_DISPLAY} →</a>
+                  <p className="font-sans text-[11px] text-[var(--muted)] font-medium">Direct Voice Helpline (India)</p>
                 </dd>
               </div>
 
