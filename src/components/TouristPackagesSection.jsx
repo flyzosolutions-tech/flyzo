@@ -32,7 +32,7 @@ export default function TouristPackagesSection({ onSelectEnquiry }) {
               Curated tourist packages, zero hidden costs.
             </h2>
             <p className="text-base sm:text-lg text-[var(--muted)] mt-3 max-w-2xl font-medium">
-              Flights, visa assistance, 4★/5★ hotels, airport transfers, and sightseeing included. Pick a region below or open any day-by-day trail.
+              Flights, visa assistance, 4-Star &amp; 5-Star hotels, airport transfers, and sightseeing included. Pick a region below or open any day-by-day trail.
             </p>
           </div>
 

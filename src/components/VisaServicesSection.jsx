@@ -3,6 +3,7 @@ import {
   Clock, FileText, CheckCircle2, MessageCircle, ArrowUpRight
 } from 'lucide-react';
 import { VISA_SERVICES, buildWhatsAppUrl } from '../data/siteData';
+import { CountryFlagSVG } from './FlyzoBrandArt';
 
 const VISA_COLORS = ['#1aa3e4', '#8bc34f', '#fbce12', '#f9823f', '#b8a0d0', '#8fbaab'];
 
@@ -55,7 +56,7 @@ export default function VisaServicesSection({ onSelectEnquiry }) {
                   {/* Country Header */}
                   <div className="flex items-start justify-between gap-3 pb-4 border-b border-[var(--line)]">
                     <div className="flex items-center gap-3">
-                      <span className="text-4xl">{visa.flag}</span>
+                      <CountryFlagSVG code={visa.flagCode} className="w-11 h-7" />
                       <div>
                         <h3
                           className="text-xl sm:text-2xl font-extrabold text-[var(--ink)] leading-tight"

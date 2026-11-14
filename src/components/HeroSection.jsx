@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import {
   Plane, Train, Bus, Compass, Moon, ShieldCheck,
-  FileCheck2, Briefcase, MessageCircle, ArrowRight, RotateCcw
+  FileCheck2, Briefcase, MessageCircle, ArrowRight, RotateCcw, CheckCircle2
 } from 'lucide-react';
-import { CaptainZizo, FlyzoMarkSVG } from './FlyzoBrandArt';
+import { CaptainZizo, FlyzoMarkSVG, JetVectorIcon, StarDiamondVectorIcon } from './FlyzoBrandArt';
 import { AnimatedTransitPanorama, burstAirplanes, flyMilesToNav } from './TravelAnimations';
 import { buildWhatsAppUrl } from '../data/siteData';
 
@@ -13,7 +13,7 @@ const DAILY_DISPATCH_DEALS = [
     title: 'Dubai 5D/4N + Visa + Airfare',
     price: '₹48,999',
     tag: 'Tourist Package',
-    reply: 'Locked! Includes Return Flights, 4★ Hotel, Burj Khalifa, Desert Safari & UAE Visa.',
+    reply: 'Locked! Includes Return Flights, 4-Star Hotel, Burj Khalifa, Desert Safari & UAE Visa.',
   },
   {
     code: 'B',
@@ -409,7 +409,9 @@ export default function HeroSection({ onSelectEnquiry }) {
                     {selectedDeal && (
                       <div className="space-y-2.5 pt-1 animate-fadeIn">
                         <p className="text-xs text-[#1c140c] bg-[#e9dec6] p-2.5 rounded border border-[#1c140c]/20 font-semibold">
-                          <strong className="text-[#8a2f10]">✓ Deal Selected:</strong>{' '}
+                          <strong className="text-[#8a2f10] inline-flex items-center gap-1">
+                            <CheckCircle2 className="w-3.5 h-3.5 shrink-0" /> Deal Selected:
+                          </strong>{' '}
                           {selectedDeal.reply}
                         </p>
                         <button
@@ -447,7 +449,7 @@ export default function HeroSection({ onSelectEnquiry }) {
                                   transitionDelay: `${idx * 55}ms`,
                                 }}
                               >
-                                ✈
+                                <JetVectorIcon className="w-3.5 h-3.5" />
                               </span>
                               <span className="font-mono text-[9px] font-extrabold text-[#5a4d3c]">
                                 {code}
@@ -552,7 +554,7 @@ export default function HeroSection({ onSelectEnquiry }) {
               style={{ fontFamily: 'var(--display)', fontStretch: '85%' }}
             >
               <span>{item}</span>
-              <span className="text-[#b5391a]">✦</span>
+              <StarDiamondVectorIcon className="w-3 h-3 text-[#b5391a]" />
             </span>
           ))}
         </div>

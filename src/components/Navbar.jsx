@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import {
   Sun, Moon, MessageCircle, Menu, X
 } from 'lucide-react';
-import { FlyzoMarkSVG } from './FlyzoBrandArt';
+import { FlyzoMarkSVG, JetVectorIcon } from './FlyzoBrandArt';
 import { buildWhatsAppUrl } from '../data/siteData';
 
 const NAV_LINKS = [
@@ -83,7 +83,8 @@ export default function Navbar({ theme, onToggleTheme, onQuickEnquire }) {
             className="hidden md:inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-[#fbce12] text-[#140f0a] font-mono text-[11px] font-extrabold shadow-sm select-none shrink-0"
             title="Interact with the Boarding Calendar & Travel Simulators to earn Flyzo Priority Miles!"
           >
-            <span>✈ +{airMiles}</span>
+            <JetVectorIcon className="w-3.5 h-3.5" />
+            <span>+{airMiles}</span>
           </span>
 
           {/* Light / Dark Theme Switcher */}

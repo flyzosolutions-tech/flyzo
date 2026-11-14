@@ -219,7 +219,7 @@ export const UMRAH_PACKAGES = [
 export const VISA_SERVICES = [
   {
     country: "United Arab Emirates",
-    flag: "🇦🇪",
+    flagCode: "ae",
     types: ["30 / 60 Days Tourist Visa", "Freelance & Green Visa", "96-Hour Transit Visa", "Multiple Entry 5-Year"],
     processing: "24 – 48 Hours Express",
     successRate: "99.8%",
@@ -228,7 +228,7 @@ export const VISA_SERVICES = [
   },
   {
     country: "Saudi Arabia",
-    flag: "🇸🇦",
+    flagCode: "sa",
     types: ["Umrah e-Visa", "Family Visit Visa (MOFA)", "Business & Commercial Visa", "Work Visa Stamping (Wakala)"],
     processing: "2 – 4 Working Days",
     successRate: "99.5%",
@@ -237,7 +237,7 @@ export const VISA_SERVICES = [
   },
   {
     country: "Schengen (29 Countries)",
-    flag: "🇪🇺",
+    flagCode: "eu",
     types: ["Tourist & Holiday Visa", "Business Conference Visa", "Family / Friend Visit", "VFS Appointment Priority"],
     processing: "10 – 15 Working Days",
     successRate: "96.4%",
@@ -246,7 +246,7 @@ export const VISA_SERVICES = [
   },
   {
     country: "United Kingdom & USA",
-    flag: "🇬🇧",
+    flagCode: "gb",
     types: ["UK Standard Visitor (6M/2Y)", "US B1/B2 Tourist & Business", "Student Visa (CAS / I-20)", "Early Biometric Slot Booking"],
     processing: "15 – 21 Working Days",
     successRate: "95.2%",
@@ -255,7 +255,7 @@ export const VISA_SERVICES = [
   },
   {
     country: "Qatar, Oman & Kuwait",
-    flag: "🇶🇦",
+    flagCode: "qa",
     types: ["Hayya / Tourist e-Visa", "GCC Employment Visa Stamping", "Family Joining Visa", "Medical (GAMCA / Wafid) Booking"],
     processing: "2 – 5 Working Days",
     successRate: "99.2%",
@@ -264,7 +264,7 @@ export const VISA_SERVICES = [
   },
   {
     country: "Malaysia, Singapore & Thailand",
-    flag: "🇸🇬",
+    flagCode: "sg",
     types: ["Singapore Authorized e-Visa", "Malaysia MDAC & e-Visa", "Thailand DTV / Tourist Visa", "Vietnam & Indonesia e-Visa"],
     processing: "24 – 72 Hours",
     successRate: "99.6%",
@@ -334,7 +334,8 @@ export const JOB_LISTINGS = [
     id: "job-1",
     title: "Senior HVAC & MEP Project Engineer",
     company: "Al-Futtaim Engineering Group",
-    location: "Dubai, UAE 🇦🇪",
+    location: "Dubai, UAE",
+    flagCode: "ae",
     category: "Engineering",
     salary: "AED 12,000 – 16,000 / mo (Tax-Free)",
     benefits: ["Free Family Visa", "Annual Return Tickets", "Medical Insurance"],
@@ -345,7 +346,8 @@ export const JOB_LISTINGS = [
     id: "job-2",
     title: "5-Star Hospitality Chef de Partie & F&B Supervisors",
     company: "Marriott / Hilton Red Sea Hospitality",
-    location: "Riyadh & Jeddah, Saudi Arabia 🇸🇦",
+    location: "Riyadh & Jeddah, Saudi Arabia",
+    flagCode: "sa",
     category: "Hospitality",
     salary: "SAR 4,500 – 7,000 / mo + Duty Meals",
     benefits: ["Free Accommodation", "Transportation", "2-Year Renewable Contract"],
@@ -356,7 +358,8 @@ export const JOB_LISTINGS = [
     id: "job-3",
     title: "Registered Staff Nurses (DHA / MOH / Prometric)",
     company: "Aster & Saudi German Healthcare",
-    location: "Dubai, Doha & Dammam 🇶🇦",
+    location: "Dubai, Doha & Dammam",
+    flagCode: "qa",
     category: "Healthcare",
     salary: "AED 7,500 – 10,500 / mo",
     benefits: ["DataFlow & Licensing Assistance", "Shared Executive Accommodation", "30 Days Paid Leave"],
@@ -367,7 +370,8 @@ export const JOB_LISTINGS = [
     id: "job-4",
     title: "Heavy Duty / Light GCC License Drivers & Logistics Supervisors",
     company: "Aramex & Emirates Transport Partner",
-    location: "Abu Dhabi, UAE & Muscat, Oman 🇴🇲",
+    location: "Abu Dhabi, UAE & Muscat, Oman",
+    flagCode: "om",
     category: "Logistics & Technical",
     salary: "AED 3,800 – 5,500 / mo + Overtime",
     benefits: ["Free Visa & Accommodation", "Overtime as per Labour Law", "Immediate Joining"],
@@ -378,7 +382,8 @@ export const JOB_LISTINGS = [
     id: "job-5",
     title: "Civil QA/QC Inspector & Safety Officer (NEBOSH IGC)",
     company: "NEOM & Red Sea Mega Project Contractors",
-    location: "Tabuk / NEOM, Saudi Arabia 🇸🇦",
+    location: "Tabuk / NEOM, Saudi Arabia",
+    flagCode: "sa",
     category: "Engineering",
     salary: "SAR 8,500 – 13,000 / mo",
     benefits: ["Food + Camp Accommodation", "Wakala Ready", "Flight Provided"],
@@ -389,7 +394,8 @@ export const JOB_LISTINGS = [
     id: "job-6",
     title: "Retail Sales Executives & Gold Showroom Managers",
     company: "Malabar / Joyalukkas / Duty Free Partners",
-    location: "Dubai, Sharjah & Kuwait City 🇰🇼",
+    location: "Dubai, Sharjah & Kuwait City",
+    flagCode: "kw",
     category: "Hospitality",
     salary: "AED 4,500 – 8,000 + High Incentives",
     benefits: ["Employment Visa", "Health Cover", "Yearly Bonus"],
@@ -402,34 +408,34 @@ export const SOCIAL_HUB = {
   instagram: {
     handle: "@flyzotravels",
     followers: "48.5K Followers",
-    bio: "✨ Luxury Holidays • Blessed Umrah • Express Visas • Attestation & Overseas Careers 🌍 DM or WhatsApp for instant bookings!",
+    bio: "Luxury Holidays • Blessed Umrah • Express Visas • Attestation & Overseas Careers — DM or WhatsApp for instant bookings!",
     url: "https://instagram.com",
     posts: [
       {
         id: "ig-1",
         image: "https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=600&q=80",
-        caption: "Alhamdulillah! Our 45-member VIP Umrah group safely arrived in Madinah Munawwarah today 🕋✨",
+        caption: "Alhamdulillah! Our 45-member VIP Umrah group safely arrived in Madinah Munawwarah today.",
         likes: "2.4k",
         type: "Reel"
       },
       {
         id: "ig-2",
         image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=600&q=80",
-        caption: "Dubai 5D/4N Royal Escape starting at just ₹48,999 with Visa & Flights! Tag your travel buddy ✈️🌴",
+        caption: "Dubai 5D/4N Royal Escape starting at just ₹48,999 with Visa & Flights! Tag your travel buddy.",
         likes: "1.9k",
         type: "Carousel"
       },
       {
         id: "ig-3",
         image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=600&q=80",
-        caption: "120+ UAE, Schengen & Saudi Visas stamped this week with 99.8% approval rate! 🛂✅",
+        caption: "120+ UAE, Schengen & Saudi Visas stamped this week with 99.8% approval rate!",
         likes: "1.5k",
         type: "Post"
       },
       {
         id: "ig-4",
         image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80",
-        caption: "Maldives Overwater Lagoon Deal is LIVE! 🌊 Book before Friday for free seaplane upgrade.",
+        caption: "Maldives Overwater Lagoon Deal is LIVE! Book before Friday for free seaplane upgrade.",
         likes: "3.1k",
         type: "Reel"
       }
@@ -438,7 +444,7 @@ export const SOCIAL_HUB = {
   facebook: {
     name: "Flyzo Travels & Global Services Official",
     likes: "82,000+ Community Members",
-    rating: "4.9 ★ (1,450+ Verified Reviews)",
+    rating: "4.9 / 5.0 (1,450+ Verified Reviews)",
     url: "https://facebook.com",
     updates: [
       {

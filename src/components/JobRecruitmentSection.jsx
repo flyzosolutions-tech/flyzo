@@ -4,6 +4,7 @@ import {
   MessageCircle, Upload, Building2, Flame
 } from 'lucide-react';
 import { JOB_LISTINGS, buildWhatsAppUrl } from '../data/siteData';
+import { CountryFlagSVG } from './FlyzoBrandArt';
 
 const JOB_CATEGORIES = ['All', 'Engineering', 'Hospitality', 'Healthcare', 'Logistics & Technical'];
 
@@ -90,6 +91,7 @@ export default function JobRecruitmentSection({ onSelectEnquiry }) {
                   <div className="flex items-center gap-2 text-[var(--ink)]">
                     <MapPin className="w-4 h-4 text-[#b5391a] shrink-0" />
                     <span>{job.location}</span>
+                    <CountryFlagSVG code={job.flagCode} className="w-5 h-3.5 ml-0.5" />
                   </div>
                   <div className="flex items-center gap-2 text-[#1f6b35] font-extrabold">
                     <Banknote className="w-4 h-4 shrink-0" />

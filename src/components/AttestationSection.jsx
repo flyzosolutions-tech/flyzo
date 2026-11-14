@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  FileCheck2, CheckCircle2, Truck, MessageCircle, ArrowRight
+  FileCheck2, CheckCircle2, Truck, MessageCircle, ArrowRight, Clock
 } from 'lucide-react';
 import { ATTESTATION_STEPS, ATTESTATION_CATEGORIES, buildWhatsAppUrl } from '../data/siteData';
 
@@ -95,8 +95,9 @@ export default function AttestationSection({ onSelectEnquiry }) {
                   </h3>
                 </div>
 
-                <span className="inline-block mt-3 px-3 py-1 rounded-full bg-[#fbce12] text-[#140f0a] text-xs font-extrabold">
-                  ⏱ Turnaround: {cat.turnaround}
+                <span className="inline-flex items-center gap-1.5 mt-3 px-3 py-1 rounded-full bg-[#fbce12] text-[#140f0a] text-xs font-extrabold">
+                  <Clock className="w-3.5 h-3.5 shrink-0" />
+                  <span>Turnaround: {cat.turnaround}</span>
                 </span>
 
                 <ul className="mt-4 space-y-2.5">

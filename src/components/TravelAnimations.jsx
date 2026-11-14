@@ -1,7 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { CaptainZizo } from './FlyzoBrandArt';
+import {
+  CaptainZizo,
+  JetVectorIcon,
+  CoachVectorIcon,
+  TrainVectorIcon,
+  KaabaVectorIcon,
+  PassportStampVectorIcon,
+  SteeringWheelVectorIcon,
+} from './FlyzoBrandArt';
 import { buildWhatsAppUrl } from '../data/siteData';
-import { Sparkles } from 'lucide-react';
+import { Sparkles, Briefcase, CheckCircle2, Play, Pause } from 'lucide-react';
 
 /**
  * High-Craft Commercial Widebody Jet Airliner Vector Model (Boeing 787 / A350 profile)
@@ -358,7 +366,7 @@ export function flyMilesToNav(el, miles = 250) {
   const to = navChip.getBoundingClientRect();
   const flyer = document.createElement('div');
   flyer.className = 'saxaz-xp-fly';
-  flyer.textContent = `+${miles} MILES ✈`;
+  flyer.innerHTML = `<span style="display:inline-flex;align-items:center;gap:5px">+${miles} MILES <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-.8-.7-1.5-1.8-1.5h-5.3L9.5 3H7.2l2.6 7.5H4.6L2.8 8H1.2l1.2 4-1.2 4h1.6l1.8-2.5h5.2L7.2 21h2.3l5.4-7.5h5.3c1.1 0 1.8-.7 1.8-1.5z"/></svg></span>`;
   flyer.style.left = `${from.left + from.width / 2 - 48}px`;
   flyer.style.top = `${from.top - 10}px`;
   document.body.appendChild(flyer);
@@ -563,7 +571,7 @@ const TRANSIT_BANDS = [
     accent: '#fbce12',
     title: 'Sacred Umrah, Visas & Attestation',
     points: [
-      '0-Meter Haram view 5★ Makkah & Madinah packages with direct Saudia flights',
+      '0-Meter Haram view 5-Star Makkah & Madinah packages with direct Saudia flights',
       'Express Tourist & Work Visas + MEA/Embassy/MOFA Certificate Attestation',
       'Verified GCC & European overseas job recruitment with Wakala clearance',
     ],
@@ -763,11 +771,14 @@ export function ScrollPinnedTransitShowcase() {
                   }`}
                 >
                   <div className="space-y-2">
-                    <span className="inline-block px-3 py-1 rounded-full bg-[#140f0a] text-[#fbce12] text-xs font-extrabold">
-                      ✈ LIVE FLIGHT RADAR
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#140f0a] text-[#fbce12] text-xs font-extrabold">
+                      <JetVectorIcon className="w-3.5 h-3.5" />
+                      <span>LIVE FLIGHT RADAR</span>
                     </span>
-                    <h4 className="poster-h2 !text-3xl !text-white drop-shadow">
-                      COK ✈ KWI / DXB
+                    <h4 className="poster-h2 !text-3xl !text-white drop-shadow flex items-center gap-2">
+                      <span>COK</span>
+                      <JetVectorIcon className="w-6 h-6 text-[#fbce12]" />
+                      <span>KWI / DXB</span>
                     </h4>
                   </div>
 
@@ -814,11 +825,12 @@ export function ScrollPinnedTransitShowcase() {
                   }`}
                 >
                   <div className="space-y-1 text-right">
-                    <span className="inline-block px-3 py-1 rounded-full bg-[#fbce12] text-[#140f0a] text-xs font-extrabold">
-                      🚌 VOLVO 9600 SLEEPER
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#fbce12] text-[#140f0a] text-xs font-extrabold">
+                      <CoachVectorIcon className="w-3.5 h-3.5" />
+                      <span>VOLVO 9600 SLEEPER</span>
                     </span>
                     <h4 className="poster-h2 !text-3xl !text-[#fffaf0]">
-                      BLR ➔ COK
+                      BLR → COK
                     </h4>
                   </div>
 
@@ -859,8 +871,9 @@ export function ScrollPinnedTransitShowcase() {
                   }`}
                 >
                   <div className="space-y-1">
-                    <span className="inline-block px-3 py-1 rounded-full bg-[#fbce12] text-[#140f0a] text-xs font-extrabold">
-                      🚆 TATKAL &amp; VISTADOME
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#fbce12] text-[#140f0a] text-xs font-extrabold">
+                      <TrainVectorIcon className="w-3.5 h-3.5" />
+                      <span>TATKAL &amp; VISTADOME</span>
                     </span>
                     <h4 className="poster-h2 !text-3xl !text-white">
                       EXPRESS RAIL
@@ -897,8 +910,9 @@ export function ScrollPinnedTransitShowcase() {
                   }`}
                 >
                   <div className="space-y-1">
-                    <span className="inline-block px-3 py-1 rounded-full bg-[#fbce12] text-[#140f0a] text-xs font-extrabold">
-                      🕋 UMRAH &amp; GLOBAL VISAS
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#fbce12] text-[#140f0a] text-xs font-extrabold">
+                      <KaabaVectorIcon className="w-3.5 h-3.5" />
+                      <span>UMRAH &amp; GLOBAL VISAS</span>
                     </span>
                     <h4 className="poster-h2 !text-3xl !text-[#fbce12]">
                       MAKKAH &amp; GCC
@@ -957,7 +971,7 @@ export function ScrollPinnedTransitShowcase() {
                   <div className="bg-white/10 backdrop-blur p-3.5 rounded-2xl space-y-1.5 border border-white/15">
                     <div className="flex justify-between text-xs font-bold">
                       <span className="text-[#fbce12]">HARAM PROXIMITY</span>
-                      <span>0m – 350m 5★ Hotels</span>
+                      <span>0m – 350m 5-Star Hotels</span>
                     </div>
                     <div className="flex justify-between text-xs font-bold">
                       <span className="text-white/70">VISA &amp; MOFA</span>
@@ -1012,25 +1026,78 @@ const LAB_MODES = [
   },
 ];
 
+const SIM_ROUTES = [
+  { id: 'cok-kwi', from: 'INDIA (COK / CCJ)', to: 'KUWAIT (KWI)', airline: 'Jazeera / Kuwait Airways', baseFare: 13499 },
+  { id: 'bom-dxb', from: 'INDIA (BOM / COK)', to: 'DUBAI (DXB)', airline: 'Emirates / Air India Exp', baseFare: 12800 },
+  { id: 'del-jed', from: 'INDIA (DEL / BOM)', to: 'JEDDAH (JED)', airline: 'Saudia / Indigo', baseFare: 24500 },
+];
+
 export function InteractiveTravelLab() {
   const [labKey, setLabKey] = useState('flight-sim');
+  const [routeIdx, setRouteIdx] = useState(0);
   const [flightProgress, setFlightProgress] = useState(55);
+  const [isAutoFlying, setIsAutoFlying] = useState(true);
   const [baggageKg, setBaggageKg] = useState(35);
   const [selectedBerths, setSelectedBerths] = useState(['L2', 'L3']);
   const [stampPressed, setStampPressed] = useState(false);
   const [stampCount, setStampCount] = useState(1);
   const [stampCountry, setStampCountry] = useState('KUWAIT / UAE 5-YR MULTI');
   const [monthlyAed, setMonthlyAed] = useState(4500);
+  const svgSimRef = useRef(null);
+  const isDraggingSvgRef = useRef(false);
 
   const activeLab = LAB_MODES.find((m) => m.key === labKey) || LAB_MODES[0];
+  const activeRoute = SIM_ROUTES[routeIdx] || SIM_ROUTES[0];
 
-  // Quadratic bezier point helper for the airplane simulator (P0=(48,162), P1=(210,24), P2=(372,152))
+  // Smooth Auto-Pilot loop when isAutoFlying is active
+  useEffect(() => {
+    if (!isAutoFlying || labKey !== 'flight-sim') return;
+    let rafId;
+    let lastTime = performance.now();
+    let currentProg = flightProgress;
+
+    const tick = (now) => {
+      const dt = (now - lastTime) / 1000;
+      lastTime = now;
+      currentProg = (currentProg + dt * 14) % 100;
+      setFlightProgress(Math.round(currentProg));
+      rafId = requestAnimationFrame(tick);
+    };
+    rafId = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(rafId);
+  }, [isAutoFlying, labKey]);
+
+  // Direct pointer/touch scrubbing on the SVG map
+  const updateFlightFromPointer = (clientX) => {
+    const svg = svgSimRef.current;
+    if (!svg) return;
+    const rect = svg.getBoundingClientRect();
+    const relX = Math.max(0, Math.min(1, (clientX - rect.left - rect.width * 0.1) / (rect.width * 0.8)));
+    setIsAutoFlying(false);
+    setFlightProgress(Math.round(relX * 100));
+  };
+
+  // Quadratic bezier point helper for the airplane simulator (P0=(48,158), P1=(210,22), P2=(372,148))
   const t = flightProgress / 100;
   const planeX = (1 - t) * (1 - t) * 48 + 2 * (1 - t) * t * 210 + t * t * 372;
-  const planeY = (1 - t) * (1 - t) * 162 + 2 * (1 - t) * t * 24 + t * t * 152;
+  const planeY = (1 - t) * (1 - t) * 158 + 2 * (1 - t) * t * 22 + t * t * 148;
   const tangentX = 2 * (1 - t) * (210 - 48) + 2 * t * (372 - 210);
-  const tangentY = 2 * (1 - t) * (24 - 162) + 2 * t * (152 - 24);
+  const tangentY = 2 * (1 - t) * (22 - 158) + 2 * t * (148 - 22);
   const planeAngle = (Math.atan2(tangentY, tangentX) * 180) / Math.PI;
+
+  // Dynamic Baggage Tier & Fare Calculation
+  const extraKg = Math.max(0, baggageKg - 20);
+  const estimatedFare = activeRoute.baseFare + extraKg * 85;
+  const airportSavings = extraKg * 420;
+  const suitcaseCount = Math.max(1, Math.min(5, Math.floor((baggageKg - 10) / 10)));
+  const baggageTierLabel =
+    baggageKg <= 25
+      ? 'Lite Express (1 Checked + 7KG Cabin)'
+      : baggageKg <= 35
+      ? 'GCC NRI Standard (2 Pieces + 7KG Cabin)'
+      : baggageKg <= 45
+      ? 'Family / Umrah Plus (2×23KG + Zamzam)'
+      : 'Student / Long-Term Extra Cargo (3 Pieces)';
 
   const toggleBerth = (id, e) => {
     burstAirplanes(e.currentTarget);
@@ -1062,7 +1129,7 @@ export function InteractiveTravelLab() {
             Don&apos;t just browse. Test-drive your trip.
           </h2>
           <p className="text-sm sm:text-base font-medium" style={{ color: activeLab.muted }}>
-            Slide the widebody jet across the flight arc, tap sleeper berths on our Volvo coach deck, or slam the embassy visa stamp below.
+            Drag the widebody jet directly across the flight map (or use Auto-Pilot), stack up to 60KG of NRI/Student luggage, tap Volvo sleeper berths, or slam the embassy visa stamp.
           </p>
 
           <div className="grid grid-cols-2 gap-2.5 pt-2" role="group" aria-label="Choose interactive travel lab">
@@ -1102,40 +1169,152 @@ export function InteractiveTravelLab() {
             {labKey === 'flight-sim' && (
               <div className="space-y-4">
                 <div className="flex flex-wrap items-center justify-between gap-2">
-                  <h3 className="poster-h2 !text-2xl !text-[#1c140c]">
-                    ✈ Live Widebody Jet &amp; Baggage Simulator
+                  <h3 className="poster-h2 !text-2xl !text-[#1c140c] flex items-center gap-2">
+                    <JetVectorIcon className="w-6 h-6 text-[#b5391a]" />
+                    <span>Live Widebody Jet &amp; Baggage Simulator</span>
                   </h3>
-                  <span className="px-2.5 py-1 rounded bg-[#140f0a] text-[#fbce12] font-mono text-xs font-extrabold">
-                    ALTITUDE: {Math.round(Math.sin(t * Math.PI) * 38000).toLocaleString()} FT
+                  <div className="flex items-center gap-2">
+                    <button
+                      type="button"
+                      onClick={() => setIsAutoFlying((v) => !v)}
+                      className={`inline-flex items-center gap-1.5 px-3 py-1 rounded font-mono text-xs font-extrabold border border-[#140f0a] transition-colors ${
+                        isAutoFlying
+                          ? 'bg-[#8ae2a5] text-[#0c2d17]'
+                          : 'bg-[#fbce12] text-[#140f0a]'
+                      }`}
+                    >
+                      {isAutoFlying ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5" />}
+                      <span>{isAutoFlying ? 'AUTO-FLYING' : 'AUTO-FLY'}</span>
+                    </button>
+                    <span className="px-2.5 py-1 rounded bg-[#140f0a] text-[#fbce12] font-mono text-xs font-extrabold">
+                      ALT: {Math.round(Math.sin(t * Math.PI) * 38000).toLocaleString()} FT
+                    </span>
+                  </div>
+                </div>
+
+                {/* Route Selector Pills */}
+                <div className="flex flex-wrap items-center gap-2">
+                  {SIM_ROUTES.map((r, idx) => (
+                    <button
+                      key={r.id}
+                      type="button"
+                      onClick={() => setRouteIdx(idx)}
+                      className={`px-3 py-1 rounded-full text-xs font-extrabold border border-[#140f0a] transition-colors ${
+                        routeIdx === idx
+                          ? 'bg-[#140f0a] text-[#fbce12]'
+                          : 'bg-white text-[#140f0a] hover:bg-[#fbce12]'
+                      }`}
+                    >
+                      {r.from.split(' ')[0]} → {r.to}
+                    </button>
+                  ))}
+                  <span className="ml-auto text-[11px] font-mono font-bold text-[#5a4d3c] hidden sm:inline">
+                    Drag on map or slider below
                   </span>
                 </div>
 
                 <svg
-                  viewBox="0 0 420 205"
-                  className="w-full h-auto rounded-lg bg-gradient-to-b from-[#bae6fd] to-[#e0f2fe] border-2 border-[#140f0a] select-none overflow-hidden"
+                  ref={svgSimRef}
+                  viewBox="0 0 420 215"
+                  onPointerDown={(e) => {
+                    isDraggingSvgRef.current = true;
+                    e.currentTarget.setPointerCapture?.(e.pointerId);
+                    updateFlightFromPointer(e.clientX);
+                  }}
+                  onPointerMove={(e) => {
+                    if (!isDraggingSvgRef.current) return;
+                    updateFlightFromPointer(e.clientX);
+                  }}
+                  onPointerUp={() => {
+                    isDraggingSvgRef.current = false;
+                  }}
+                  onPointerCancel={() => {
+                    isDraggingSvgRef.current = false;
+                  }}
+                  className="w-full h-auto rounded-lg bg-gradient-to-b from-[#bae6fd] to-[#e0f2fe] border-2 border-[#140f0a] select-none overflow-hidden cursor-ew-resize touch-none"
                 >
-                  <circle cx="368" cy="40" r="20" fill="#fbce12" />
+                  <defs>
+                    <linearGradient id="contrailFade" x1="0" y1="0" x2="1" y2="0">
+                      <stop offset="0%" stopColor="#fbce12" stopOpacity="0" />
+                      <stop offset="60%" stopColor="#fbce12" stopOpacity="0.45" />
+                      <stop offset="100%" stopColor="#fffcf4" stopOpacity="0.9" />
+                    </linearGradient>
+                  </defs>
+
+                  <circle cx="374" cy="36" r="18" fill="#fbce12" />
                   <g fill="#ffffff" opacity="0.88" className="anim-cloud-slow">
                     <circle cx="105" cy="52" r="15" />
                     <circle cx="124" cy="48" r="19" />
                     <circle cx="268" cy="60" r="16" />
                   </g>
 
-                  {/* Landmasses & Ocean */}
-                  <path d="M0 172 Q 68 156, 120 182 L 120 205 L 0 205 Z" fill="#8bc34f" />
-                  <path d="M300 164 Q 360 150, 420 172 L 420 205 L 300 205 Z" fill="#e7c15c" />
-                  <rect x="120" y="180" width="180" height="25" fill="#0284c7" />
+                  {/* LIVE VISUAL CARGO BAY HUD (Responds directly to Luggage Allowance Slider!) */}
+                  <g transform="translate(10, 10)">
+                    <rect
+                      x="0"
+                      y="0"
+                      width="176"
+                      height="42"
+                      rx="6"
+                      fill="#140f0a"
+                      fillOpacity="0.9"
+                      stroke="#fbce12"
+                      strokeWidth="1.2"
+                    />
+                    <text x="8" y="13" fontSize="8" fontFamily="JetBrains Mono, monospace" fontWeight="800" fill="#fbce12">
+                      CARGO HOLD: {baggageKg} KG ({suitcaseCount} BAGS + CABIN)
+                    </text>
+                    {/* Vector Suitcase Icons that stack as KG increases */}
+                    {Array.from({ length: 5 }, (_, i) => {
+                      const activeBag = i < suitcaseCount;
+                      const bx = 8 + i * 26;
+                      return (
+                        <g key={i} transform={`translate(${bx}, 18)`} opacity={activeBag ? 1 : 0.22}>
+                          <path
+                            d="M6 0 H14 V3 H6 Z"
+                            fill="none"
+                            stroke={activeBag ? '#fbce12' : '#9ca3af'}
+                            strokeWidth="1.4"
+                          />
+                          <rect
+                            x="1"
+                            y="3"
+                            width="18"
+                            height="14"
+                            rx="2.5"
+                            fill={activeBag ? (i % 2 === 0 ? '#f9823f' : '#2fb1e8') : '#374151'}
+                            stroke="#fff"
+                            strokeWidth="1"
+                          />
+                          <line x1="6" y1="3" x2="6" y2="17" stroke="#140f0a" strokeWidth="1" />
+                          <line x1="14" y1="3" x2="14" y2="17" stroke="#140f0a" strokeWidth="1" />
+                        </g>
+                      );
+                    })}
+                    {/* Cabin Trolley Icon */}
+                    <g transform="translate(144, 19)">
+                      <rect x="2" y="3" width="12" height="13" rx="2" fill="#8ae2a5" stroke="#140f0a" strokeWidth="1" />
+                      <text x="8" y="12" textAnchor="middle" fontSize="6.5" fontWeight="900" fill="#0c2d17">
+                        7K
+                      </text>
+                    </g>
+                  </g>
 
-                  <text x="16" y="196" fontSize="10.5" fontWeight="900" fill="#140f0a">
-                    INDIA (COK / BOM)
+                  {/* Landmasses & Ocean */}
+                  <path d="M0 176 Q 68 160, 125 186 L 125 215 L 0 215 Z" fill="#8bc34f" />
+                  <path d="M295 168 Q 360 154, 420 176 L 420 215 L 295 215 Z" fill="#e7c15c" />
+                  <rect x="125" y="185" width="170" height="30" fill="#0284c7" />
+
+                  <text x="12" y="203" fontSize="10" fontWeight="900" fill="#140f0a">
+                    {activeRoute.from}
                   </text>
-                  <text x="308" y="196" fontSize="10.5" fontWeight="900" fill="#140f0a">
-                    KUWAIT / DUBAI / JED
+                  <text x="304" y="203" fontSize="10" fontWeight="900" fill="#140f0a">
+                    {activeRoute.to}
                   </text>
 
                   {/* Dashed Flight Trajectory */}
                   <path
-                    d="M 48 162 Q 210 24 372 152"
+                    d="M 48 158 Q 210 22 372 148"
                     fill="none"
                     stroke="#140f0a"
                     strokeWidth="2.2"
@@ -1143,8 +1322,8 @@ export function InteractiveTravelLab() {
                     opacity="0.35"
                   />
 
-                  <circle cx="48" cy="162" r="6" fill="#2a1f66" />
-                  <circle cx="372" cy="152" r="6" fill="#b5391a" />
+                  <circle cx="48" cy="158" r="6" fill="#2a1f66" />
+                  <circle cx="372" cy="148" r="6" fill="#b5391a" />
 
                   {/* Detailed Jet Airliner Positioned & Rotated Tangent to Curve */}
                   <g transform={`translate(${planeX}, ${planeY}) rotate(${planeAngle})`}>
@@ -1163,7 +1342,14 @@ export function InteractiveTravelLab() {
                       min="0"
                       max="100"
                       value={flightProgress}
-                      onChange={(e) => setFlightProgress(Number(e.target.value))}
+                      onInput={(e) => {
+                        setIsAutoFlying(false);
+                        setFlightProgress(Number(e.currentTarget.value));
+                      }}
+                      onChange={(e) => {
+                        setIsAutoFlying(false);
+                        setFlightProgress(Number(e.target.value));
+                      }}
                       className="saxaz-range w-full"
                     />
                   </label>
@@ -1171,7 +1357,7 @@ export function InteractiveTravelLab() {
                   <label className="block">
                     <div className="flex justify-between text-xs font-extrabold uppercase mb-1">
                       <span>Luggage Allowance (KG)</span>
-                      <b className="font-mono text-sm text-[#0077b6]">{baggageKg} KG</b>
+                      <b className="font-mono text-sm text-[#0077b6]">{baggageKg} KG ({suitcaseCount} Bags)</b>
                     </div>
                     <input
                       type="range"
@@ -1179,27 +1365,46 @@ export function InteractiveTravelLab() {
                       max="60"
                       step="5"
                       value={baggageKg}
+                      onInput={(e) => setBaggageKg(Number(e.currentTarget.value))}
                       onChange={(e) => setBaggageKg(Number(e.target.value))}
                       className="saxaz-range w-full"
                     />
                   </label>
                 </div>
 
-                <div className="p-3.5 rounded-lg bg-[#e9dec6] flex flex-wrap items-center justify-between gap-3">
-                  <div className="text-xs sm:text-sm font-bold">
-                    {flightProgress === 100
-                      ? '🎉 Touchdown! Priority immigration & baggage belt ready.'
-                      : `✈️ Cruising at Mach 0.84 with ${baggageKg}kg student/NRI baggage allowance.`}
+                {/* Live Baggage & Fare Breakdown Box */}
+                <div className="p-3.5 rounded-lg bg-[#e9dec6] flex flex-wrap items-center justify-between gap-3 border border-[#140f0a]/15">
+                  <div className="space-y-0.5">
+                    <div className="text-xs sm:text-sm font-extrabold text-[#1c140c] flex items-center gap-1.5">
+                      <CheckCircle2 className="w-4 h-4 text-[#1f6b35] shrink-0" />
+                      <span>
+                        {flightProgress >= 98
+                          ? `Touchdown at ${activeRoute.to}! Priority baggage belt ready.`
+                          : `${activeRoute.airline} • ${baggageTierLabel}`}
+                      </span>
+                    </div>
+                    <p className="text-xs font-bold text-[#5a4d3c]">
+                      Est. Net Fare:{' '}
+                      <strong className="font-mono text-sm text-[#b5391a]">
+                        ₹{estimatedFare.toLocaleString('en-IN')}
+                      </strong>
+                      {extraKg > 0 && (
+                        <span className="ml-2 text-[#1f6b35]">
+                          (Saves ₹{airportSavings.toLocaleString('en-IN')} vs. airport excess rate)
+                        </span>
+                      )}
+                    </p>
                   </div>
                   <a
                     href={buildWhatsAppUrl(
-                      `Hello Flyzo Travels! I want to book a flight with ${baggageKg}KG baggage allowance.`
+                      `Hello Flyzo Travels! I want to lock the ${activeRoute.from} to ${activeRoute.to} flight with ${baggageKg}KG baggage allowance (Est: ₹${estimatedFare.toLocaleString('en-IN')}).`
                     )}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-4 py-2 rounded bg-[#140f0a] text-[#fbce12] text-xs font-extrabold"
+                    onClick={(e) => flyMilesToNav(e.currentTarget, 200)}
+                    className="px-4 py-2.5 rounded bg-[#140f0a] text-[#fbce12] text-xs font-extrabold shrink-0 hover:brightness-110"
                   >
-                    Lock {baggageKg}KG Fare →
+                    Lock {baggageKg}KG Fare (₹{estimatedFare.toLocaleString('en-IN')}) →
                   </a>
                 </div>
               </div>
@@ -1209,8 +1414,9 @@ export function InteractiveTravelLab() {
             {labKey === 'bus-berth' && (
               <div className="space-y-4">
                 <div className="flex flex-wrap items-center justify-between gap-2">
-                  <h3 className="poster-h2 !text-2xl !text-[#1c140c]">
-                    🚌 Tap Berths on the Volvo Multi-Axle Deck
+                  <h3 className="poster-h2 !text-2xl !text-[#1c140c] flex items-center gap-2">
+                    <CoachVectorIcon className="w-6 h-6 text-[#b5391a]" />
+                    <span>Tap Berths on the Volvo Multi-Axle Deck</span>
                   </h3>
                   <span className="px-2.5 py-1 rounded bg-[#140f0a] text-[#fbce12] font-mono text-xs font-extrabold">
                     SELECTED: {selectedBerths.length ? selectedBerths.join(', ') : 'NONE'}
@@ -1219,8 +1425,14 @@ export function InteractiveTravelLab() {
 
                 <div className="p-4 rounded-lg bg-[#fffaf0] border-2 border-[#140f0a]">
                   <div className="flex items-center justify-between text-xs font-extrabold uppercase text-[#5a4d3c] mb-3 pb-2 border-b border-[#d6c8ab]">
-                    <span>🛞 FRONT COCKPIT • CAPTAIN CABIN</span>
-                    <span className="text-[#1f6b35]">● GREEN = SELECTED ({selectedBerths.length} BERTHS)</span>
+                    <span className="inline-flex items-center gap-1.5">
+                      <SteeringWheelVectorIcon className="w-4 h-4 text-[#b5391a]" />
+                      <span>FRONT COCKPIT • CAPTAIN CABIN</span>
+                    </span>
+                    <span className="text-[#1f6b35] inline-flex items-center gap-1">
+                      <CheckCircle2 className="w-3.5 h-3.5" />
+                      <span>GREEN = SELECTED ({selectedBerths.length} BERTHS)</span>
+                    </span>
                   </div>
 
                   <div className="grid grid-cols-6 gap-2.5">
@@ -1273,8 +1485,9 @@ export function InteractiveTravelLab() {
             {labKey === 'visa-stamp' && (
               <div className="space-y-4">
                 <div className="flex flex-wrap items-center justify-between gap-2">
-                  <h3 className="poster-h2 !text-2xl !text-[#1c140c]">
-                    🛂 Slam the Official Embassy / Visa Stamp!
+                  <h3 className="poster-h2 !text-2xl !text-[#1c140c] flex items-center gap-2">
+                    <PassportStampVectorIcon className="w-6 h-6 text-[#1f6b35]" />
+                    <span>Slam the Official Embassy / Visa Stamp!</span>
                   </h3>
                   <span className="px-2.5 py-1 rounded bg-[#140f0a] text-[#fbce12] font-mono text-xs font-extrabold">
                     STAMPS ISSUED: {stampCount}
@@ -1350,8 +1563,9 @@ export function InteractiveTravelLab() {
             {labKey === 'job-salary' && (
               <div className="space-y-4">
                 <div className="flex flex-wrap items-center justify-between gap-2">
-                  <h3 className="poster-h2 !text-2xl !text-[#1c140c]">
-                    💼 GCC &amp; Europe Tax-Free Remittance Calculator
+                  <h3 className="poster-h2 !text-2xl !text-[#1c140c] flex items-center gap-2">
+                    <Briefcase className="w-6 h-6 text-[#2a1f66]" />
+                    <span>GCC &amp; Europe Tax-Free Remittance Calculator</span>
                   </h3>
                   <span className="px-2.5 py-1 rounded bg-[#140f0a] text-[#fbce12] font-mono text-xs font-extrabold">
                     FREE FOOD + ACCOMMODATION
@@ -1369,6 +1583,7 @@ export function InteractiveTravelLab() {
                     max="15000"
                     step="500"
                     value={monthlyAed}
+                    onInput={(e) => setMonthlyAed(Number(e.currentTarget.value))}
                     onChange={(e) => setMonthlyAed(Number(e.target.value))}
                     className="saxaz-range w-full"
                   />

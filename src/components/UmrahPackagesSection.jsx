@@ -3,6 +3,7 @@ import {
   Moon, MapPin, CheckCircle2, MessageCircle
 } from 'lucide-react';
 import { UMRAH_PACKAGES, buildWhatsAppUrl } from '../data/siteData';
+import { KaabaVectorIcon, MosqueDomeVectorIcon } from './FlyzoBrandArt';
 
 export default function UmrahPackagesSection({ onSelectEnquiry }) {
   // Interactive Haram Distance & Package Simulator (like SAXAZ's .lab interactive figure)
@@ -167,11 +168,17 @@ export default function UmrahPackagesSection({ onSelectEnquiry }) {
 
                 <div className="grid sm:grid-cols-2 gap-2.5 text-xs">
                   <div className="p-2.5 rounded-xl bg-white/10">
-                    <span className="text-[#fbce12] font-extrabold block">🕋 Makkah Hotel Distance:</span>
+                    <span className="text-[#fbce12] font-extrabold flex items-center gap-1.5 mb-0.5">
+                      <KaabaVectorIcon className="w-4 h-4" />
+                      <span>Makkah Hotel Distance:</span>
+                    </span>
                     <span>{currentPkg.distanceMakkah}</span>
                   </div>
                   <div className="p-2.5 rounded-xl bg-white/10">
-                    <span className="text-[#8ae2a5] font-extrabold block">🕌 Madinah Hotel Distance:</span>
+                    <span className="text-[#8ae2a5] font-extrabold flex items-center gap-1.5 mb-0.5">
+                      <MosqueDomeVectorIcon className="w-4 h-4" />
+                      <span>Madinah Hotel Distance:</span>
+                    </span>
                     <span>{currentPkg.distanceMadinah}</span>
                   </div>
                 </div>
