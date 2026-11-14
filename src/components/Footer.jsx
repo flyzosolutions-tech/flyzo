@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   Plane, Compass, Moon, ShieldCheck, Briefcase,
-  PhoneCall, Instagram, Facebook, Linkedin, MessageCircle
+  PhoneCall, Instagram, Facebook, Linkedin, MessageCircle, Mail, MapPin
 } from 'lucide-react';
 import { FlyzoMarkSVG, CaptainZizo } from './FlyzoBrandArt';
 import {
@@ -11,6 +11,8 @@ import {
   CALLING_NUMBER_ALT,
   CALLING_NUMBER_ALT_DISPLAY,
   WHATSAPP_NUMBER_DISPLAY,
+  OFFICIAL_EMAIL,
+  HEAD_OFFICE_ADDRESS,
 } from '../data/siteData';
 
 const DOCK_TABS = [
@@ -83,7 +85,17 @@ export default function Footer({ activeSection }) {
                 >
                   <MessageCircle className="w-3.5 h-3.5" /> WhatsApp: {WHATSAPP_NUMBER_DISPLAY}
                 </a>
+                <a
+                  href={`mailto:${OFFICIAL_EMAIL}`}
+                  className="flex items-center gap-1.5 hover:text-[#1aa3e4] break-all"
+                >
+                  <Mail className="w-3.5 h-3.5 text-[#1aa3e4] shrink-0" /> {OFFICIAL_EMAIL}
+                </a>
               </div>
+              <p className="pt-1 flex items-start gap-1.5 text-xs font-bold text-[var(--ink)] max-w-xs leading-snug">
+                <MapPin className="w-3.5 h-3.5 text-[#f9823f] shrink-0 mt-0.5" />
+                <span>{HEAD_OFFICE_ADDRESS}</span>
+              </p>
             </div>
 
             <div>

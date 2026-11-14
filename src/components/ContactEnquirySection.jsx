@@ -10,6 +10,8 @@ import {
   CALLING_NUMBER_ALT,
   CALLING_NUMBER_ALT_DISPLAY,
   WHATSAPP_NUMBER_DISPLAY,
+  OFFICIAL_EMAIL,
+  HEAD_OFFICE_ADDRESS,
 } from '../data/siteData';
 
 const SERVICE_OPTIONS = [
@@ -96,21 +98,24 @@ export default function ContactEnquirySection({ prefilledService }) {
 
               <div className="p-4 rounded-2xl border border-[var(--line)] bg-[var(--surface)]">
                 <dt className="text-xs font-extrabold uppercase text-[var(--muted)] flex items-center gap-1.5">
-                  <Mail className="w-3.5 h-3.5 text-[#1aa3e4]" /> Official Emails
+                  <Mail className="w-3.5 h-3.5 text-[#1aa3e4]" /> Official Email
                 </dt>
                 <dd className="mt-1 font-bold text-xs text-[var(--ink)] break-all">
-                  bookings@flyzotravels.com
-                  <br />
-                  visa@flyzotravels.com
+                  <a href={`mailto:${OFFICIAL_EMAIL}`} className="underline text-[#1aa3e4] block">
+                    {OFFICIAL_EMAIL}
+                  </a>
+                  <span className="text-[11px] text-[var(--muted)] font-medium block mt-0.5">
+                    24/7 Bookings, Visas &amp; Attestation
+                  </span>
                 </dd>
               </div>
 
               <div className="p-4 rounded-2xl border border-[var(--line)] bg-[var(--surface)]">
                 <dt className="text-xs font-extrabold uppercase text-[var(--muted)] flex items-center gap-1.5">
-                  <MapPin className="w-3.5 h-3.5 text-[#f9823f]" /> Branch Network
+                  <MapPin className="w-3.5 h-3.5 text-[#f9823f]" /> Head Office (Calicut)
                 </dt>
-                <dd className="mt-1 font-bold text-xs text-[var(--ink)]">
-                  Kuwait City • Dubai • Mumbai • Kochi • Kozhikode • New Delhi
+                <dd className="mt-1 font-bold text-xs text-[var(--ink)] leading-snug">
+                  {HEAD_OFFICE_ADDRESS}
                 </dd>
               </div>
             </dl>

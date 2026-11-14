@@ -4,6 +4,8 @@ export const CALLING_NUMBER_ALT = "+919048608444"; // Secondary Calling Helpline
 export const CALLING_NUMBER_ALT_DISPLAY = "+91 90486 08444";
 export const WHATSAPP_NUMBER = "96560387543"; // Official Flyzo Travels WhatsApp (+965 6038 7543)
 export const WHATSAPP_NUMBER_DISPLAY = "+965 6038 7543";
+export const OFFICIAL_EMAIL = "flyzosolutions@gmail.com";
+export const HEAD_OFFICE_ADDRESS = "Erackson Complex, 3rd Floor, Ram Mohan Road, Behind Francis Alukkas, Calicut, KL 673004";
 
 export const buildWhatsAppUrl = (message) => {
   const encoded = encodeURIComponent(message);
