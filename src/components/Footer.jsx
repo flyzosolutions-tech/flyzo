@@ -129,8 +129,13 @@ export default function Footer({ activeSection }) {
               </h3>
               <ul className="space-y-2 font-bold text-xs sm:text-sm">
                 <li>
-                  <a href="#instagram" className="inline-flex items-center gap-1.5 hover:text-[#f9823f]">
-                    <Instagram className="w-4 h-4" /> 7. Instagram (@flyzotravels)
+                  <a
+                    href={content?.socialHub?.instagram?.url || 'https://www.instagram.com/flyzo_global/'}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 hover:text-[#f9823f]"
+                  >
+                    <Instagram className="w-4 h-4" /> 7. Instagram ({content?.socialHub?.instagram?.handle || '@flyzo_global'})
                   </a>
                 </li>
                 <li>

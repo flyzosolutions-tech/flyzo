@@ -602,38 +602,38 @@
   ],
   "socialHub": {
     "instagram": {
-      "handle": "@flyzotravels",
-      "followers": "48.5K Followers",
-      "bio": "Luxury Holidays • Blessed Umrah • Express Visas • Attestation & Overseas Careers — DM or WhatsApp for instant bookings!",
-      "url": "https://instagram.com",
+      "handle": "@flyzo_global",
+      "followers": "Flyzo Global Official",
+      "bio": "Build a career that speaks globally • Travel | Immigration | Ticketing | Certificate Attestation • Calicut (+91 90486 06444 / +91 90486 08444)",
+      "url": "https://www.instagram.com/flyzo_global/",
       "posts": [
         {
           "id": "ig-1",
-          "image": "https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=600&q=80",
-          "caption": "Alhamdulillah! Our 45-member VIP Umrah group safely arrived in Madinah Munawwarah today.",
-          "likes": "2.4k",
-          "type": "Reel"
-        },
-        {
-          "id": "ig-2",
-          "image": "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=600&q=80",
-          "caption": "Dubai 5D/4N Royal Escape starting at just ₹48,999 with Visa & Flights! Tag your travel buddy.",
-          "likes": "1.9k",
+          "image": "/uploads/ig-post-1-malaysia.jpg",
+          "caption": "Experience Malaysia — Special UAE National Day & International Holiday Package! DM or WhatsApp Flyzo Global to lock your seats.",
+          "likes": "Verified Post",
           "type": "Carousel"
         },
         {
+          "id": "ig-2",
+          "image": "/uploads/ig-post-2-attestation.jpg",
+          "caption": "Certificate Attestation On Time! Complete Document Attestation, End-to-End Assistance, Doorstep Pick-up & Delivery with 24/7 Service.",
+          "likes": "Verified Post",
+          "type": "Post"
+        },
+        {
           "id": "ig-3",
-          "image": "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=600&q=80",
-          "caption": "120+ UAE, Schengen & Saudi Visas stamped this week with 99.8% approval rate!",
-          "likes": "1.5k",
+          "image": "/uploads/ig-post-3-flights.jpg",
+          "caption": "ലോകത്തെവിടേക്കുമുള്ള വിമാന ടിക്കറ്റുകൾ — Global Flight Tickets to any destination worldwide at the best fares and trusted service!",
+          "likes": "Verified Post",
           "type": "Post"
         },
         {
           "id": "ig-4",
-          "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80",
-          "caption": "Maldives Overwater Lagoon Deal is LIVE! Book before Friday for free seaplane upgrade.",
-          "likes": "3.1k",
-          "type": "Reel"
+          "image": "/uploads/ig-post-4-sharjah-jobs.jpg",
+          "caption": "URGENT HIRING IN SHARJAH, UAE — Packing Workers Required! Basic Salary: 1600 AED + Benefits. Immediate Joining | Men & Women Can Apply.",
+          "likes": "Urgent Hiring",
+          "type": "Job Alert"
         }
       ]
     },

@@ -3,7 +3,7 @@ import { DEFAULT_SITE_CONTENT, buildWhatsAppUrl } from '../data/siteData';
 
 const ContentContext = createContext(null);
 
-const CACHE_KEY = 'flyzo_live_content_cache_v1';
+const CACHE_KEY = 'flyzo_live_content_cache_v2';
 
 function mergeWithDefaults(incoming) {
   if (!incoming || typeof incoming !== 'object') return DEFAULT_SITE_CONTENT;

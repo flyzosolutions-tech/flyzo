@@ -68,7 +68,7 @@ export default function SocialMediaSection() {
               className="tactile-btn py-3 px-5 bg-[#f9823f] text-[#140f0a] text-xs sm:text-sm shrink-0"
             >
               <Instagram className="w-4 h-4" />
-              <span>Follow @flyzotravels</span>
+              <span>Follow {instagram.handle}</span>
               <ExternalLink className="w-3.5 h-3.5" />
             </a>
           </div>
