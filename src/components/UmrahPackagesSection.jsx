@@ -2,15 +2,17 @@ import React, { useState } from 'react';
 import {
   Moon, MapPin, CheckCircle2, MessageCircle
 } from 'lucide-react';
-import { UMRAH_PACKAGES, buildWhatsAppUrl } from '../data/siteData';
+import { useSiteContent } from '../context/ContentContext';
 import { KaabaVectorIcon, MosqueDomeVectorIcon } from './FlyzoBrandArt';
 
 export default function UmrahPackagesSection({ onSelectEnquiry }) {
+  const { content, buildWaUrl: buildWhatsAppUrl } = useSiteContent();
+  const UMRAH_PACKAGES = content.umrahPackages;
   // Interactive Haram Distance & Package Simulator (like SAXAZ's .lab interactive figure)
   const [selectedIdx, setSelectedIdx] = useState(1); // Default to 5-Star Clock Tower
   const [pilgrimCount, setPilgrimCount] = useState(2);
 
-  const currentPkg = UMRAH_PACKAGES[selectedIdx];
+  const currentPkg = UMRAH_PACKAGES[selectedIdx] || UMRAH_PACKAGES[0];
   const numericPrice = parseInt(currentPkg.price.replace(/[^0-9]/g, ''), 10) || 75000;
   const groupDiscount = pilgrimCount >= 4 ? 4000 : 0;
   const totalEstimated = (numericPrice - groupDiscount) * pilgrimCount;

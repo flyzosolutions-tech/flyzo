@@ -3,10 +3,11 @@ import {
   Instagram, Facebook, Linkedin, Heart, ExternalLink,
   ThumbsUp, Briefcase, MessageCircle
 } from 'lucide-react';
-import { SOCIAL_HUB, buildWhatsAppUrl } from '../data/siteData';
+import { useSiteContent } from '../context/ContentContext';
 
 export default function SocialMediaSection() {
-  const { instagram, facebook, linkedin } = SOCIAL_HUB;
+  const { content, buildWaUrl: buildWhatsAppUrl } = useSiteContent();
+  const { instagram, facebook, linkedin } = content.socialHub;
 
   return (
     <section

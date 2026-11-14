@@ -3,7 +3,7 @@ import {
   Sun, Moon, MessageCircle, Menu, X
 } from 'lucide-react';
 import { FlyzoMarkSVG, JetVectorIcon } from './FlyzoBrandArt';
-import { buildWhatsAppUrl } from '../data/siteData';
+import { useSiteContent } from '../context/ContentContext';
 
 const NAV_LINKS = [
   { id: 'tickets', label: 'Tickets' },
@@ -17,6 +17,7 @@ const NAV_LINKS = [
 ];
 
 export default function Navbar({ theme, onToggleTheme, onQuickEnquire }) {
+  const { buildWaUrl: buildWhatsAppUrl } = useSiteContent();
   const [scrollProgress, setScrollProgress] = useState(0);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [airMiles, setAirMiles] = useState(250);

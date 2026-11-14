@@ -3,16 +3,7 @@ import {
   PhoneCall, Mail, MapPin, MessageCircle, Send, CheckCircle2
 } from 'lucide-react';
 import { CaptainZizo } from './FlyzoBrandArt';
-import {
-  buildWhatsAppUrl,
-  CALLING_NUMBER,
-  CALLING_NUMBER_DISPLAY,
-  CALLING_NUMBER_ALT,
-  CALLING_NUMBER_ALT_DISPLAY,
-  WHATSAPP_NUMBER_DISPLAY,
-  OFFICIAL_EMAIL,
-  HEAD_OFFICE_ADDRESS,
-} from '../data/siteData';
+import { useSiteContent } from '../context/ContentContext';
 
 const SERVICE_OPTIONS = [
   '11. Flight / Train / Luxury Bus Ticket Booking',
@@ -25,6 +16,16 @@ const SERVICE_OPTIONS = [
 ];
 
 export default function ContactEnquirySection({ prefilledService }) {
+  const { content, buildWaUrl: buildWhatsAppUrl } = useSiteContent();
+  const {
+    callingNumber: CALLING_NUMBER,
+    callingNumberDisplay: CALLING_NUMBER_DISPLAY,
+    callingNumberAlt: CALLING_NUMBER_ALT,
+    callingNumberAltDisplay: CALLING_NUMBER_ALT_DISPLAY,
+    whatsappNumberDisplay: WHATSAPP_NUMBER_DISPLAY,
+    officialEmail: OFFICIAL_EMAIL,
+    headOfficeAddress: HEAD_OFFICE_ADDRESS,
+  } = content.contactInfo;
   const [fullName, setFullName] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');

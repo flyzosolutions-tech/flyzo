@@ -3,12 +3,14 @@ import {
   Briefcase, MapPin, Banknote, CheckCircle2,
   MessageCircle, Upload, Building2, Flame
 } from 'lucide-react';
-import { JOB_LISTINGS, buildWhatsAppUrl } from '../data/siteData';
+import { useSiteContent } from '../context/ContentContext';
 import { CountryFlagSVG } from './FlyzoBrandArt';
 
 const JOB_CATEGORIES = ['All', 'Engineering', 'Hospitality', 'Healthcare', 'Logistics & Technical'];
 
 export default function JobRecruitmentSection({ onSelectEnquiry }) {
+  const { content, buildWaUrl: buildWhatsAppUrl } = useSiteContent();
+  const JOB_LISTINGS = content.jobListings;
   const [activeCategory, setActiveCategory] = useState('All');
 
   const filteredJobs =

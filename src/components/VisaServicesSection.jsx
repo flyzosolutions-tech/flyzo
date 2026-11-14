@@ -2,12 +2,14 @@ import React from 'react';
 import {
   Clock, FileText, CheckCircle2, MessageCircle, ArrowUpRight
 } from 'lucide-react';
-import { VISA_SERVICES, buildWhatsAppUrl } from '../data/siteData';
+import { useSiteContent } from '../context/ContentContext';
 import { CountryFlagSVG } from './FlyzoBrandArt';
 
 const VISA_COLORS = ['#1aa3e4', '#8bc34f', '#fbce12', '#f9823f', '#b8a0d0', '#8fbaab'];
 
 export default function VisaServicesSection({ onSelectEnquiry }) {
+  const { content, buildWaUrl: buildWhatsAppUrl } = useSiteContent();
+  const VISA_SERVICES = content.visaServices;
   return (
     <section id="visa-services" className="py-20 px-4 sm:px-8 relative overflow-hidden">
       {/* Ghost Word */}

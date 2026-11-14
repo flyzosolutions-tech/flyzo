@@ -2,9 +2,12 @@ import React from 'react';
 import {
   FileCheck2, CheckCircle2, Truck, MessageCircle, ArrowRight, Clock
 } from 'lucide-react';
-import { ATTESTATION_STEPS, ATTESTATION_CATEGORIES, buildWhatsAppUrl } from '../data/siteData';
+import { useSiteContent } from '../context/ContentContext';
 
 export default function AttestationSection({ onSelectEnquiry }) {
+  const { content, buildWaUrl: buildWhatsAppUrl } = useSiteContent();
+  const ATTESTATION_STEPS = content.attestationSteps;
+  const ATTESTATION_CATEGORIES = content.attestationCategories;
   return (
     <section
       id="attestation"

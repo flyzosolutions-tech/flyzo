@@ -5,31 +5,7 @@ import {
 } from 'lucide-react';
 import { CaptainZizo, FlyzoMarkSVG, JetVectorIcon, StarDiamondVectorIcon } from './FlyzoBrandArt';
 import { AnimatedTransitPanorama, burstAirplanes, flyMilesToNav } from './TravelAnimations';
-import { buildWhatsAppUrl } from '../data/siteData';
-
-const DAILY_DISPATCH_DEALS = [
-  {
-    code: 'A',
-    title: 'Dubai 5D/4N + Visa + Airfare',
-    price: '₹48,999',
-    tag: 'Tourist Package',
-    reply: 'Locked! Includes Return Flights, 4-Star Hotel, Burj Khalifa, Desert Safari & UAE Visa.',
-  },
-  {
-    code: 'B',
-    title: '14 Days Sacred Umrah All-Inclusive',
-    price: '₹74,999',
-    tag: 'Umrah Special',
-    reply: 'MashaAllah! Includes Direct Saudia Flight, Umrah Visa, Makkah/Madinah Hotels, Buffet & Ziyarat.',
-  },
-  {
-    code: 'C',
-    title: 'UAE / Saudi Express Visa + Attestation',
-    price: '₹6,499',
-    tag: '24–48h Express',
-    reply: '99.8% Approval! Doorstep certificate pickup for MEA/Embassy Attestation + Express e-Visa.',
-  },
-];
+import { useSiteContent } from '../context/ContentContext';
 
 const TICKER_ITEMS = [
   '1. FLYZO TRAVELS HOME',
@@ -46,6 +22,9 @@ const TICKER_ITEMS = [
 ];
 
 export default function HeroSection({ onSelectEnquiry }) {
+  const { content, buildWaUrl } = useSiteContent();
+  const hero = content.hero;
+  const dailyDeals = content.dailyDeals;
   const [selectedDeal, setSelectedDeal] = useState(null);
   const [tearing, setTearing] = useState(false);
   const [torn, setTorn] = useState(false);
@@ -198,25 +177,22 @@ export default function HeroSection({ onSelectEnquiry }) {
           {/* LEFT COLUMN: Massive Poster Headline & 11-Service Quick Matrix */}
           <div className="lg:col-span-7 space-y-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 border-2 border-[#f8efdc] text-[#f8efdc] text-xs font-extrabold uppercase tracking-[0.14em]">
-              <span>IATA ACCREDITED • ISO 9001:2015 GLOBAL TRAVEL DESK</span>
+              <span>{hero.badge}</span>
             </div>
 
             <h1
               className="poster-h1 text-[#f8efdc]"
               style={{ fontSize: 'clamp(2.85rem, 7.6vw, 7.2rem)' }}
             >
-              <mark className="bg-transparent text-[#fbce12]">TICKETS, UMRAH</mark> &amp; GLOBAL VISAS.
+              <mark className="bg-transparent text-[#fbce12]">{hero.headlineHighlight}</mark>{' '}
+              {hero.headlineMain}
               <span className="block mt-2 text-[0.46em] leading-[1.08] tracking-normal normal-case font-extrabold text-[#f8efdc]">
-                One trusted agency for holidays, attestation &amp; overseas careers.
+                {hero.headlineSub}
               </span>
             </h1>
 
             <p className="text-base sm:text-lg text-[#f8efdc] max-w-[50ch] font-medium leading-relaxed">
-              Skip the generic booking portals. Whether you need an urgent{' '}
-              <strong className="text-[#fbce12]">Flight, Train or Bus ticket</strong>, a 5-Star{' '}
-              <strong className="text-[#fbce12]">Makkah &amp; Madinah Umrah group</strong>, express{' '}
-              <strong className="text-[#fbce12]">MEA/Embassy Attestation</strong>, or verified{' '}
-              <strong className="text-[#fbce12]">GCC Job Recruitment</strong> — our specialists handle every stamp.
+              {hero.description}
             </p>
 
             {/* Primary Tactile CTAs */}
@@ -230,7 +206,7 @@ export default function HeroSection({ onSelectEnquiry }) {
               </a>
 
               <a
-                href={buildWhatsAppUrl("Hello Flyzo Travels! I want to book / enquire via your WhatsApp Desk.")}
+                href={buildWaUrl("Hello Flyzo Travels! I want to book / enquire via your WhatsApp Desk.")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="tactile-btn px-6 py-4 border-2 border-[#f8efdc] text-[#f8efdc] hover:bg-[#f8efdc] hover:text-[#140f0a] text-sm sm:text-base"
@@ -364,16 +340,16 @@ export default function HeroSection({ onSelectEnquiry }) {
 
                     <div>
                       <h2 className="text-xs font-extrabold uppercase tracking-wider text-[#a5310f]">
-                        Today&apos;s Flash Travel &amp; Visa Dispatch
+                        {hero.calendarTitle}
                       </h2>
                       <p className="text-base sm:text-lg font-extrabold text-[#1c140c] leading-snug mt-0.5">
-                        Which Flyzo special would you like to unlock today?
+                        {hero.calendarQuestion}
                       </p>
                     </div>
 
                     {/* Interactive Deal Options (like SAXAZ's A/B/C daily question) */}
                     <div className="space-y-2">
-                      {DAILY_DISPATCH_DEALS.map((deal) => {
+                      {dailyDeals.map((deal) => {
                         const isPicked = selectedDeal?.code === deal.code;
                         return (
                           <button
@@ -500,7 +476,7 @@ export default function HeroSection({ onSelectEnquiry }) {
 
                     <div className="space-y-2 pt-1">
                       <a
-                        href={buildWhatsAppUrl(
+                        href={buildWaUrl(
                           `Hello Flyzo Travels! I tore off today's Boarding Pass for *${selectedDeal?.title}* (${selectedDeal?.price}). Please lock this deal for me!`
                         )}
                         target="_blank"

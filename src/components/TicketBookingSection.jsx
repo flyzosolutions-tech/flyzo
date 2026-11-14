@@ -3,7 +3,7 @@ import {
   Plane, Train, Bus, ArrowLeftRight, MessageCircle,
   Send, Calendar, Users, MapPin
 } from 'lucide-react';
-import { POPULAR_ROUTES, buildWhatsAppUrl } from '../data/siteData';
+import { useSiteContent } from '../context/ContentContext';
 
 const TICKET_TABS = [
   {
@@ -36,6 +36,8 @@ const TICKET_TABS = [
 ];
 
 export default function TicketBookingSection({ onSelectEnquiry }) {
+  const { content, buildWaUrl: buildWhatsAppUrl } = useSiteContent();
+  const POPULAR_ROUTES = content.popularRoutes;
   const [mode, setMode] = useState('flight');
   const [tripType, setTripType] = useState('One Way');
   const [fromCity, setFromCity] = useState('Mumbai (BOM)');

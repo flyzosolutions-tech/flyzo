@@ -7,9 +7,55 @@ export const WHATSAPP_NUMBER_DISPLAY = "+965 6038 7543";
 export const OFFICIAL_EMAIL = "flyzosolutions@gmail.com";
 export const HEAD_OFFICE_ADDRESS = "Erackson Complex, 3rd Floor, Ram Mohan Road, Behind Francis Alukkas, Calicut, KL 673004";
 
-export const buildWhatsAppUrl = (message) => {
+export const CONTACT_INFO = {
+  callingNumber: CALLING_NUMBER,
+  callingNumberDisplay: CALLING_NUMBER_DISPLAY,
+  callingNumberAlt: CALLING_NUMBER_ALT,
+  callingNumberAltDisplay: CALLING_NUMBER_ALT_DISPLAY,
+  whatsappNumber: WHATSAPP_NUMBER,
+  whatsappNumberDisplay: WHATSAPP_NUMBER_DISPLAY,
+  officialEmail: OFFICIAL_EMAIL,
+  headOfficeAddress: HEAD_OFFICE_ADDRESS,
+};
+
+export const HERO_CONTENT = {
+  badge: "IATA ACCREDITED • ISO 9001:2015 GLOBAL TRAVEL DESK",
+  headlineHighlight: "TICKETS, UMRAH",
+  headlineMain: "& GLOBAL VISAS.",
+  headlineSub: "One trusted agency for holidays, attestation & overseas careers.",
+  description: "Skip the generic booking portals. Whether you need an urgent Flight, Train or Bus ticket, a 5-Star Makkah & Madinah Umrah group, express MEA/Embassy Attestation, or verified GCC Job Recruitment — our specialists handle every stamp.",
+  calendarTitle: "Today's Flash Travel & Visa Dispatch",
+  calendarQuestion: "Which Flyzo special would you like to unlock today?",
+};
+
+export const DAILY_DISPATCH_DEALS = [
+  {
+    code: 'A',
+    title: 'Dubai 5D/4N + Visa + Airfare',
+    price: '₹48,999',
+    tag: 'Tourist Package',
+    reply: 'Locked! Includes Return Flights, 4-Star Hotel, Burj Khalifa, Desert Safari & UAE Visa.',
+  },
+  {
+    code: 'B',
+    title: '14 Days Sacred Umrah All-Inclusive',
+    price: '₹74,999',
+    tag: 'Umrah Special',
+    reply: 'MashaAllah! Includes Direct Saudia Flight, Umrah Visa, Makkah/Madinah Hotels, Buffet & Ziyarat.',
+  },
+  {
+    code: 'C',
+    title: 'UAE / Saudi Express Visa + Attestation',
+    price: '₹6,499',
+    tag: '24–48h Express',
+    reply: '99.8% Approval! Doorstep certificate pickup for MEA/Embassy Attestation + Express e-Visa.',
+  },
+];
+
+export const buildWhatsAppUrl = (message, customWaNumber) => {
   const encoded = encodeURIComponent(message);
-  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encoded}`;
+  const num = (customWaNumber || WHATSAPP_NUMBER).replace(/[^0-9]/g, '');
+  return `https://wa.me/${num}?text=${encoded}`;
 };
 
 export const POPULAR_ROUTES = {
@@ -485,4 +531,18 @@ export const SOCIAL_HUB = {
       }
     ]
   }
+};
+
+export const DEFAULT_SITE_CONTENT = {
+  contactInfo: CONTACT_INFO,
+  hero: HERO_CONTENT,
+  dailyDeals: DAILY_DISPATCH_DEALS,
+  popularRoutes: POPULAR_ROUTES,
+  touristPackages: TOURIST_PACKAGES,
+  umrahPackages: UMRAH_PACKAGES,
+  visaServices: VISA_SERVICES,
+  attestationSteps: ATTESTATION_STEPS,
+  attestationCategories: ATTESTATION_CATEGORIES,
+  jobListings: JOB_LISTINGS,
+  socialHub: SOCIAL_HUB,
 };

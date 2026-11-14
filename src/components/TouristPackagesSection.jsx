@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import {
   Star, Clock, CheckCircle2, MessageCircle, Calendar, X, ArrowUpRight
 } from 'lucide-react';
-import { TOURIST_PACKAGES, buildWhatsAppUrl } from '../data/siteData';
+import { useSiteContent } from '../context/ContentContext';
 
 const CATEGORIES = ['All', 'Middle East', 'Europe', 'Asia', 'Island', 'Domestic'];
 const CARD_ACCENTS = ['#f9823f', '#1aa3e4', '#8bc34f', '#fbce12', '#b8a0d0', '#8fbaab'];
 
 export default function TouristPackagesSection({ onSelectEnquiry }) {
+  const { content, buildWaUrl: buildWhatsAppUrl } = useSiteContent();
+  const TOURIST_PACKAGES = content.touristPackages;
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [activeItinerary, setActiveItinerary] = useState(null);
 
